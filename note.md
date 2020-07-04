@@ -32,5 +32,12 @@ name :英文加数字
 ### 把本地仓库信息提交到远程仓库
 > // 建立本地仓库和远程仓库的链接
  $ git remote -v 查看链接
+ 让本地仓库和远程仓库新建一个链接 origin是随便起的一个连接名，(可以改成自己想要的名字),
  $ git remote add origin [git仓库地址]
+ 删除关联信息
+ $ git remote rm origin 
 
+> 提交之前最好先拉取
+ $ git pull origin master
+ 把本地代码提交到远程仓库(需要输入github)
+ $ git push origin master
