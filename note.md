@@ -143,3 +143,4 @@ node_modules
 - $ npm install nrm -g
 - $ nrm ls 查看源
 - $ nrm use taobao 切换源
+
