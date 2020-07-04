@@ -64,7 +64,27 @@ https://www.npmjs.com/基于npm是从npmjs.com平台上下载安装
 - $ npm install xxx -g 把模块安装在全局环境中
 - $ npm i xxx@1.0.0 安装指定版本号的模块
 - $ npm view xxx version > xxx.version.json 查看某个模块的版本信息(输出到指定json文件中)
-- $ npm init -y 初始化当前项目的配置依赖清单
+
+```
+  什么情况下会把模板安装在全局？
+ -> 可以使用命令对任何项目进行操作
+ -> 通过 $ npm root -g 查看全局安装的目录
+ -> 因为在安装目录下生成了 xxx.cmd的文件，所以我们能够使用xxx命令进行操作的
+ 
+ 安装在本地项目中的模块
+ -> 可以在项目中导入进来使用
+ -> 但是默认不能基于命令来操作(因为没有.cmd文件)
+ -> 但是可以基于package.json中的scripts,配置一些npm可以执行的命令，配置通过 $ npm run xxx 执行
+
+
+```
+- $ npm init -y 初始化当前项目的配置依赖清单(项目文件夹的名字不能出现中文、大写字母和特殊符号）
+> =>创建成功后，在当前项目中生成package.json的清单文件
+    dependencies:生产依赖模块(开发和项目部署的时候都需要)
+    devDependencies:开发依赖模块(只有开发的时候需要)
+    scripts:配置本地可执行命令的
+
+
 - $ npm i xxx --save 把模块保存在清单生长依赖中
 - $ npm i xxx --save-dev  把模块保存在清单开发依赖中
 - $ npm install 跑环境，按照清单安装所需的模快
@@ -72,3 +92,19 @@ https://www.npmjs.com/基于npm是从npmjs.com平台上下载安装
 - $ npm root -g 查看全局模块的目录
 - $ npm uninstall xxx      
 - $ npm uninstall xxx -g  卸载安装过的模块
+
+### window操作系统: 在某个文件夹下执行DOS命令
+1、window+r  ->运行窗口中输入cmd
+- > 磁盘符: 进入指定磁盘
+- > cd xx 进入指定的目录
+- > cd 直接拖进想要进入的目录文件夹
+
+2.在文件夹地址栏直接输入cmd即可
+3.在文件夹中shift+鼠标右键 -> 在此处打开命令窗口
+
+
+如果想查看当前目录中的文件内容，
+- mac: ls  /ls -A
+- window : dir 
+
+把less编译成css文件的命令 lessc 1.less 1.min.css -x
