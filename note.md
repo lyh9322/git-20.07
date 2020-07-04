@@ -38,15 +38,37 @@ name :英文加数字
  $ git remote rm origin 
 
 > 提交之前最好先拉取
- -$ git pull origin master
+ - $ git pull origin master
  把本地代码提交到远程仓库(需要输入github的用户密码信息)
- -$ git push origin master
- -$ git clone [远程仓库git地址][别名:可以不设置，默认是仓库名]
- /*
- *   真实项目开发流程:
-    1.组长或者负责人，先把中央仓库创建好。
-    2.小组成员基于git克隆 $git clone 把远程仓库及默认内容克隆到本地一份4
+ - $ git push origin master
+ - $ git clone [远程仓库git地址][别名:可以不设置，默认是仓库名]
+
+ ```
+  真实项目开发流程:
+    -1.组长或者负责人，先把中央仓库创建好。
+    -2.小组成员基于git克隆 $git clone 把远程仓库及默认内容克隆到本地一份4
     (解决了三个事情:初始化一个本地仓库“git init”、和相应的远程仓库也把持了关联“git remote add”、把远程仓库默认内容拉取到本地“git init ”)
-    3.每个组员写完自己的程序后，基于“git add/git commmit”把自己修改的内容存放到历史区，然后通过“git pull/push”把本地信息和远程仓库信息保持同步即可(可能涉及冲突的处理)
-    4.增加协作者
- */
+    -3.每个组员写完自己的程序后，基于“git add/git commmit”把自己修改的内容存放到历史区，然后通过“git pull/push”把本地信息和远程仓库信息保持同步即可(可能涉及冲突的处理)
+    -4.增加协作者
+```
+### npm的基础操作
+>  NPM node package manger :Node 模块管理工具,根据NPM我们可快速安装，卸载所需要的资源文件(例如：jquery、vu额、vue-router)
+
+去NODE官网:https://nodejs.org/zh-cn/下载node,npm也就跟着安装了
+- $ node -v
+- $ npm -v 出现版本号，说明安装成功
+
+#### 基于npm进行模块管理
+https://www.npmjs.com/基于npm是从npmjs.com平台上下载安装
+- $ npm install xxx 把模块安装在当前项目中(node_modules)
+- $ npm install xxx -g 把模块安装在全局环境中
+- $ npm i xxx@1.0.0 安装指定版本号的模块
+- $ npm view xxx version > xxx.version.json 查看某个模块的版本信息(输出到指定json文件中)
+- $ npm init -y 初始化当前项目的配置依赖清单
+- $ npm i xxx --save 把模块保存在清单生长依赖中
+- $ npm i xxx --save-dev  把模块保存在清单开发依赖中
+- $ npm install 跑环境，按照清单安装所需的模快
+
+- $ npm root -g 查看全局模块的目录
+- $ npm uninstall xxx      
+- $ npm uninstall xxx -g  卸载安装过的模块
