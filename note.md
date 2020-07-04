@@ -108,3 +108,38 @@ https://www.npmjs.com/基于npm是从npmjs.com平台上下载安装
 - window : dir 
 
 把less编译成css文件的命令 lessc 1.less 1.min.css -x
+
+### 一个新项目的开始
+- 1、创建项目的文件夹
+- 2、把它作为一个新的仓库进行代码管理( 可以基于$git clone 把远程仓库克隆下来)
+- 3、初始化模块配置清单package.json: $npm init -y
+- 4、安装所需要的模块:$ npm install xxx
+- 5、正常开发
+- 6、开发中可能需要在本地配置命令去完成一些功能(例如 less)问价编译，此时需要配合npm可执行的命令
+```
+ "scripts":{
+   "less":" less css/index.less css/index.css -x"
+ }
+```
+- 7、开发中我们需要基于git把文件进行管理:生成对应的历史版本提交到暂存区、历史区、远程仓库的时候，项目中很多文件是无需处理和提交的，例如 node_modules,不需要提交的我们生成一个gitignore忽略文件
+
+```
+node_modules
+
+```
+- 8、由于每次提价的时候，我们都不去提交node_modules,所以团队协作开发中,我们每当拉下来程序后,都需要“跑环境”:$ npm install,按照项目中的package.json中的依赖项信息，把缺失的模块都安装一遍
+
+
+### 基于yarn进行第三方管理
+- $ npm i yarn -g   =>(yarn 不能安装全局模块)
+- $ yarn init -y 初始化配置
+- $ yarn install 跑环境
+- $ yarn add  xxx 
+- $ yarn add xxx -g 
+- $ yarn remove xxx 移除
+
+用同步镜像,加快速度
+### 基于nrm 切源
+- $ npm install nrm -g
+- $ nrm ls 查看源
+- $ nrm use taobao 切换源
